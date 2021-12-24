@@ -1,0 +1,16 @@
+.Container {
+  padding: 10px 10px;
+  width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .Container {
+    width: 95%;
+  }
+}

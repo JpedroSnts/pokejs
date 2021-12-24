@@ -1,0 +1,92 @@
+.Navbar {
+  background-color: #cd1934;
+  padding: 10px 0;
+}
+
+.NavbarContent {
+  display: flex;
+  margin: auto;
+  width: 1024px;
+  height: inherit;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 1050px) {
+  .NavbarContent {
+    width: 95%;
+    padding: 0 10px;
+  }
+}
+
+.Logo {
+  width: 140px;
+}
+
+.Search {
+  margin-left: 40px;
+}
+
+.Search label {
+  display: none;
+}
+
+.Search input {
+  height: 35px;
+  width: 370px;
+  border: none;
+  padding: 0 15px;
+  outline: none;
+  border-radius: 50px;
+}
+
+.Search button {
+  width: 90px;
+  height: 35px;
+  border: none;
+  color: #fff;
+  background-color: #10428d;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: -80px;
+}
+
+.Search button i {
+  font-size: 15px;
+}
+
+.SelectGeneration label {
+  color: #fff;
+  padding-right: 10px;
+}
+
+.SelectGeneration select {
+  -webkit-appearance: none;
+  background: #fff url("../../public/img/select-button.png") 100% 50% no-repeat;
+  height: 35px;
+  width: 100px;
+  border: none;
+  padding: 0 10px;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .NavbarContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Search input {
+    width: 80%;
+    margin: 15px auto;
+  }
+  .Search {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+  .Search ::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,31 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btnLimpar {
+  width: 90px;
+  height: 35px;
+  margin-top: 10px;
+  border: none;
+  color: #fff;
+  background-color: #cd1934;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.loadMore {
+  width: 120px;
+  height: 35px;
+  color: #fff;
+  background-color: #0d438f;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
