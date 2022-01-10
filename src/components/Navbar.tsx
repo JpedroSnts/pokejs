@@ -1,9 +1,13 @@
-import React, { useState, useRef } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { useState, useRef, useEffect } from "react";
 import styles from "../styles/Navbar.module.css";
 
-function Navbar({ restartLoad, search, currentGeneration }) {
-  const selectGen = useRef(null);
+type NavbarProps = {
+  restartLoad: (cGen: number) => void;
+  search: (txtSearch: string) => void;
+  currentGeneration: number;
+};
+function Navbar({ restartLoad, search, currentGeneration }: NavbarProps) {
+  const selectGen = useRef(document.createElement("select"));
   const [textSearch, setTextSearch] = useState("");
 
   useEffect(() => {

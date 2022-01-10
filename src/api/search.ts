@@ -1,8 +1,8 @@
 import jsonPkmn from "./data.json";
 
-export default async function searchPokemon(textSearch, setCurrentGeneration) {
+export default async function searchPokemon(textSearch: string, setCurrentGeneration: (CurrentGeneration: number) => void) {
   const result = [];
-  if (textSearch > 898) {
+  if (parseInt(textSearch) > 898) {
     return false;
   }
   const json = jsonPkmn;

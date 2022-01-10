@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/Globals.css";
+
+// Types
+import { Ipokemon } from "./types";
 
 //Components
 import Navbar from "./components/Navbar";
@@ -26,14 +29,14 @@ function App() {
     { initial: 810, final: 898 },
   ];
 
-  function restartLoad(cGen) {
+  function restartLoad(cGen: number) {
     setPokemons([]);
     setAmountLoad(20);
     setTypeLoad("AUTO");
     setCurrentGeneration(cGen);
   }
 
-  function search(txtSearch) {
+  function search(txtSearch: string) {
     setTextSearch(txtSearch.toLowerCase());
     setAmountLoad(20);
     setTypeLoad("SUBMIT");
@@ -47,23 +50,27 @@ function App() {
   }
 
   useEffect(() => {
-    async function load(typeLoad) {
+    async function load(typeLoad: string) {
       if (typeLoad === "AUTO") {
-        const result = await loadPokemons(currentGeneration, amountLoad);
-        setPokemons(result);
+        const result: Ipokemon[] = await loadPokemons(
+          currentGeneration,
+          amountLoad,
+        );
+        setPokemons(result as never);
       } else if (typeLoad === "SUBMIT") {
-        const pkmn404 = {
+        const pkmn404: Ipokemon = {
           id: 404,
           name: "Not Found",
+          generation: 404,
           types: ["Error 404"],
           image: `${process.env.PUBLIC_URL}/img/404_pokemon.png`,
         };
         setPokemons([]);
         const result = await searchPokemon(textSearch, setCurrentGeneration);
         if (!result) {
-          setPokemons([pkmn404]);
+          setPokemons([pkmn404] as never);
         } else {
-          setPokemons(result);
+          setPokemons(result as never);
         }
       }
     }
@@ -91,11 +98,12 @@ function App() {
         )}
 
         <Container>
-          {pokemons.map((pokemon) => (
+          {pokemons.map((pokemon: Ipokemon) => (
             <Card
               key={pokemon.id}
               id={pokemon.id}
-              title={pokemon.name}
+              generation={pokemon.generation}
+              name={pokemon.name}
               types={pokemon.types}
               image={pokemon.image}
             />

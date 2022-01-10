@@ -11,7 +11,7 @@ const generations = [
   { initial: 810, final: 898 },
 ];
 
-export default async function loadPokemons(currentGeneration, amountLoad) {
+export default async function loadPokemons(currentGeneration: number, amountLoad: number) {
   const result = [];
   const oldGeneration = currentGeneration;
   var initial = generations[currentGeneration - 1].initial - 1;
@@ -20,7 +20,7 @@ export default async function loadPokemons(currentGeneration, amountLoad) {
     final = generations[currentGeneration - 1].final - 1;
   }
   for (let i = initial; i <= final; i++) {
-    if (currentGeneration !== oldGeneration) loadPokemons("auto");
+    if (currentGeneration !== oldGeneration) loadPokemons(currentGeneration, amountLoad);
     const json = jsonPkmn;
     if (json[i].name === "ditto") json[i].name = "ditto?";
     result.push({

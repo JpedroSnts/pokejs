@@ -1,5 +1,3 @@
-import React from "react";
-
 const styles = {
   color: "#fff",
   width: "40px",
@@ -16,7 +14,7 @@ const styles = {
 
 function NavToTop() {
   return (
-    <div style={styles}>
+    <div style={styles as never}>
       <i
         className="fas fa-arrow-up"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
