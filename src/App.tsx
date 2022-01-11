@@ -77,6 +77,22 @@ function App() {
     load(typeLoad);
   }, [currentGeneration, typeLoad, textSearch, amountLoad]);
 
+  useEffect(() => {
+    const IO = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        if (
+          amountLoad + generations[currentGeneration - 1].initial <
+          generations[currentGeneration - 1].final
+        )
+          setAmountLoad((amountLoad) => amountLoad + 20);
+      }
+    });
+    const div = document.getElementById("loadMore");
+    div !== null && IO.observe(div);
+
+    return () => IO.disconnect();
+  }, []);
+
   return (
     <>
       <header>
@@ -109,17 +125,7 @@ function App() {
             />
           ))}
         </Container>
-        {amountLoad + generations[currentGeneration - 1].initial >=
-          generations[currentGeneration - 1].final || typeLoad === "SUBMIT" ? (
-          ""
-        ) : (
-          <button
-            onClick={() => setAmountLoad(amountLoad + 20)}
-            className="loadMore"
-          >
-            Carregar Mais
-          </button>
-        )}
+        <div id="loadMore" />
         <NavToTop />
       </section>
     </>

@@ -49,6 +49,7 @@
   border-radius: 50px;
   cursor: pointer;
   margin-left: -80px;
+  position: relative;
 }
 
 .Search button i {

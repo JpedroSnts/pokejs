@@ -17,15 +17,6 @@
   margin-left: 20px;
 }
 
-.loadMore {
-  width: 120px;
-  height: 35px;
-  color: #fff;
-  background-color: #0d438f;
-  display: block;
-  margin: auto;
-  margin-bottom: 20px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
+#loadMore {
+  height: 5px;
 }
