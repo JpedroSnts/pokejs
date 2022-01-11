@@ -8,7 +8,12 @@ function Card({ id, name, types, image }: Ipokemon) {
         <div className={styles.CardId}>{id}</div>
         <div className={styles.CardTitle}>{name}</div>
       </div>
-      <img src={image as never} alt={`${name}`} className={styles.CardImage} />
+      <img
+        loading="lazy"
+        src={image !== null ? image : ""}
+        alt={`${name}`}
+        className={styles.CardImage}
+      />
       <div className={styles.CardFooter}>
         {types.map((type, i) => (
           <div className={styles.CardType} key={i}>
