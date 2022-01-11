@@ -20,3 +20,19 @@
 #loadMore {
   height: 5px;
 }
+
+.navToTop {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 25px;
+  background-color: #10428d;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}

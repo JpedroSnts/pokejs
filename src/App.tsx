@@ -18,16 +18,6 @@ function App() {
   const [textSearch, setTextSearch] = useState("");
   const [currentGeneration, setCurrentGeneration] = useState(1);
   const [amountLoad, setAmountLoad] = useState(20);
-  const generations = [
-    { initial: 1, final: 151 },
-    { initial: 152, final: 251 },
-    { initial: 252, final: 386 },
-    { initial: 386, final: 493 },
-    { initial: 494, final: 649 },
-    { initial: 650, final: 721 },
-    { initial: 722, final: 809 },
-    { initial: 810, final: 898 },
-  ];
 
   function restartLoad(cGen: number) {
     setPokemons([]);
@@ -78,6 +68,16 @@ function App() {
   }, [currentGeneration, typeLoad, textSearch, amountLoad]);
 
   useEffect(() => {
+    const generations = [
+      { initial: 1, final: 151 },
+      { initial: 152, final: 251 },
+      { initial: 252, final: 386 },
+      { initial: 386, final: 493 },
+      { initial: 494, final: 649 },
+      { initial: 650, final: 721 },
+      { initial: 722, final: 809 },
+      { initial: 810, final: 898 },
+    ];
     const IO = new IntersectionObserver((entries) => {
       if (entries.some((entry) => entry.isIntersecting)) {
         if (
@@ -91,7 +91,7 @@ function App() {
     div !== null && IO.observe(div);
 
     return () => IO.disconnect();
-  }, []);
+  }, [amountLoad, currentGeneration]);
 
   return (
     <>

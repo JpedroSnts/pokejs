@@ -3,25 +3,25 @@ import styles from "../styles/Card.module.css";
 
 function Card({ id, name, types, image }: Ipokemon) {
   return (
-    <div className={styles.Card}>
-      <div className={styles.CardHeader}>
-        <div className={styles.CardId}>{id}</div>
-        <div className={styles.CardTitle}>{name}</div>
-      </div>
+    <article className={styles.Card}>
+      <section className={styles.CardHeader}>
+        <p className={styles.CardId}>{id}</p>
+        <p className={styles.CardTitle}>{name}</p>
+      </section>
       <img
         loading="lazy"
         src={image !== null ? image : ""}
         alt={`${name}`}
         className={styles.CardImage}
       />
-      <div className={styles.CardFooter}>
+      <section className={styles.CardFooter}>
         {types.map((type, i) => (
           <div className={styles.CardType} key={i}>
             {type}
           </div>
         ))}
-      </div>
-    </div>
+      </section>
+    </article>
   );
 }
 
