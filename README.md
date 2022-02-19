@@ -20,7 +20,10 @@ The pokejs is a pokemon listing and search site.
 - Typescript
 - React.js
 - [POKE API](https://pokeapi.co/)
+
 ## LICENCE
 `MIT License`
 
 `Copyright (c) 2022 João Pedro de Siqueira Santos`
+
+[<img title="Figma Design" align="center" alt="icon figma" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg">](https://www.figma.com/file/Pl9xljbnD4W5ygx6IgbWIa/Pok%C3%A9.js?node-id=0%3A1)
